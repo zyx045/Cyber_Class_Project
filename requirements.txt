@@ -1,9 +1,17 @@
-os
-PIL
-numpy
-shutil
-mutagen
-pydub
-wave
-tkinter
-ast
+# Core libraries
+Pillow>=9.0.0        # For image processing
+numpy>=1.21.0         # For numerical operations
+mutagen>=1.46.0       # For audio metadata handling
+pydub>=0.25.1         # For audio file manipulation
+cryptography>=36.0.0  # For encryption/decryption
+opencv-python>=4.5.0  # For video processing
+moviepy>=1.0.3        # For video file handling
+
+# Standard libraries (included with Python, listed for documentation)
+# base64
+# os
+# json
+# hashlib
+
+# GUI (included with Python, listed for documentation)
+# tkinter
