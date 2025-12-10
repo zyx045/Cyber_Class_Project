@@ -17,11 +17,33 @@ class File:
         self.file_content = content
 
     def categorize(self):
-        if self.file_extension in ["png", "jpg", "jpeg", "gif"]:
+        """Categorize the file based on its extension.
+        
+        Categories:
+            - image: Common image formats
+            - audio: Supported audio formats (including lossless and lossy)
+            - video: Common video formats
+            - other: Any other file type
+        """
+        # Case-insensitive extension check
+        ext = self.file_extension.lower()
+        
+        # Define supported formats
+        image_exts = {"png", "jpg", "jpeg", "gif", "bmp", "tiff", "webp"}
+        audio_exts = {
+            # Lossless formats
+            "wav", "flac", "alac", "aif", "aiff", "dsf", "pcm",
+            # Lossy formats
+            "mp3", "aac", "m4a", "ogg", "opus"
+        }
+        video_exts = {"mp4", "avi", "mov", "mkv", "flv", "webm", "wmv", "m4v"}
+        
+        # Categorize the file
+        if ext in image_exts:
             self.category = "image"
-        elif self.file_extension in ["mp3", "wav"]:
+        elif ext in audio_exts:
             self.category = "audio"
-        elif self.file_extension in ["mp4", "gif"]:
+        elif ext in video_exts:
             self.category = "video"
         else:
             self.category = "other"
